@@ -1,6 +1,6 @@
 //making TypeScript type assignments for javascript does not concatenate string with number
 //In this scenario we would use the '+' signal to transform the parameters into a number
-function add(n1, n2) {
+function add(n1: number, n2: number) {
   return n1 + n2
 }
 
