@@ -1,0 +1,16 @@
+{
+  "name": "type-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "tsc app.js",
+    "start": "lite-server"
+  },
+  "author": "Daniel",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
