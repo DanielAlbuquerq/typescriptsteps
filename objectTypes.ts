@@ -1,20 +1,20 @@
 //++++++++++++ Obejct Types ++++++++++++++++
-const person: {
+const person1: {
   name: string
   age: number
   nickname: string
 } = {
-  //const person = {
+  //const person1 = {
   name: "daniel",
   age: 4,
   nickname: "Bodybuilder",
 }
 
-console.log(person.age)
+console.log(person1.age)
 //++++++++++++++++++++++++++++++++++++
 
 //Nested Objects and Types
-const pperson: {
+const person2: {
   name: string
   age: number
   hobbies: string[]
@@ -28,9 +28,9 @@ const pperson: {
 let favoriteActivities: any[]
 favoriteActivities = ["programming", 1]
 
-for (const hobby of pperson.hobbies) {
+for (const hobby of person2.hobbies) {
   console.log(typeof hobby)
-  console.log(typeof pperson.name)
+  console.log(typeof person2.name)
 
   //this console.log is based on length of the array.
   console.log(pperson.hobbies[0])
@@ -39,7 +39,7 @@ for (const hobby of pperson.hobbies) {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //Working with tuples
-const ppperson: {
+const person3: {
   name: string
   age: number
   hobbies: string[]
@@ -53,7 +53,34 @@ const ppperson: {
   role: [2, "author"],
 }
 
-console.log(ppperson.role[1])
-ppperson.role[1] = 2
+console.log(person3.role[1])
+person3.role[1] = 2
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Working with Enum
+
+// const ADMIN = 0
+// const READ_ONLY = 1
+// const AUTHOR = 2
+
+//if you don't set a number enum assign a successor number
+enum Role {
+  ADMIN = "ADMIN",
+  READ_ONLY = 100,
+  AUTHOR,
+}
+
+const person4 = {
+  name: "Maximilian",
+  age: 30,
+  hobbies: ["workout", "yoga", "play games"],
+  role: Role.ADMIN,
+}
+
+if (person4.role === Role.AUTHOR) {
+  console.log("is author")
+}
+if (person4.role === Role.ADMIN) {
+  console.log("is Admin")
+}
