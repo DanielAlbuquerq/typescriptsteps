@@ -43,6 +43,9 @@ const ppperson: {
   name: string
   age: number
   hobbies: string[]
+  //here in 'role' we set types and can not change later
+  //Fixed-length array
+  role: [number, string]
 } = {
   name: "Maximilian",
   age: 30,
@@ -50,14 +53,7 @@ const ppperson: {
   role: [2, "author"],
 }
 
-// //To use array with multiple type we need to type as any
-// let favoriteActivities: any[]
-// favoriteActivities = ["programming", 1]
+console.log(ppperson.role[1])
+ppperson.role[1] = 2
 
-for (const hobby of ppperson.hobbies) {
-  console.log(typeof hobby)
-  console.log(typeof ppperson.name)
-
-  //this console.log is based on length of the array.
-  console.log(ppperson.hobbies[0])
-}
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
