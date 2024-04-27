@@ -28,12 +28,12 @@ function combine2(
 }
 
 const combinedAgesL = combine2(30, 26, "as-number")
-console.log(combinedAges)
+console.log(combinedAgesL)
 
 const combinedStringAgesL = combine2("30", "26", "as-number")
-console.log(combinedAges)
+console.log(combinedAgesL)
 
 const combinedNamesL = combine2("Daniel", "Mendes", "as-text")
-console.log(combinedNames)
+console.log(combinedNamesL)
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
