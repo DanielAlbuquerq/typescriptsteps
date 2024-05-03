@@ -24,3 +24,5 @@ function generateError(message: string, code: number) {
   throw { message: message, errorCode: code }
 }
 generateError("e", 500)
+
+console.log("daniel")
