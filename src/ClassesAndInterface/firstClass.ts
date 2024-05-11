@@ -60,5 +60,4 @@ financial2.printEmployeeInformation()
 //employees are assigned as private, we can not set new values outside the class.
 financial2.employees[2] = "Luis"
 console.log(financial2.employees)
-
 //======================================================
