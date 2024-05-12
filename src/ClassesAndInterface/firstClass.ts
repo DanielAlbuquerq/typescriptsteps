@@ -1,4 +1,8 @@
 class Department {
+  //static
+  //we can set as private too
+  static fiscalYear = 2020
+
   name: string
   localNumber: number
 
@@ -6,7 +10,16 @@ class Department {
     this.name = n
     this.localNumber = a
   }
+
+  static createEmployee(name: string) {
+    return { name: name }
+  }
 }
+
+//Change static variable
+const newFiscal = (Department.fiscalYear = 12)
+console.log(newFiscal)
+
 const accounting = new Department("Accounting", 13)
 accounting.name = "IT"
 
@@ -29,6 +42,7 @@ class Department2 {
 const financial1 = new Department2("financial").describe()
 
 //===================================================
+
 //++++++++++++++++ "Private" and "Public" Access.
 class Department3 {
   public name: string
@@ -49,8 +63,12 @@ class Department3 {
   }
 }
 
-const financial2 = new Department3("financial2")
+//======================================================
+const employee1 = Department.createEmployee("Mac")
 
+console.log(employee1)
+
+const financial2 = new Department3("financial2")
 financial2.addEmployee("Daniel")
 financial2.addEmployee("David")
 
@@ -60,4 +78,5 @@ financial2.printEmployeeInformation()
 //employees are assigned as private, we can not set new values outside the class.
 financial2.employees[2] = "Luis"
 console.log(financial2.employees)
+
 //======================================================
