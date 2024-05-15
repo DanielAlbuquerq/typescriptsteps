@@ -82,3 +82,70 @@ console.log(financial2.employees)
 //======================================================
 
 //+++++++++++++++++++++ interface ++++++++++++++++++++++
+
+//Interface is used as a type.
+//Interface can not have initializer *name: string = 'Daniel'*
+//Remind! In the interface, we are using a semicolon.
+
+interface Person {
+  name: string
+  age: number
+
+  greet(phrase: string): void
+}
+
+let user1: Person
+
+user1 = {
+  name: "Daniel",
+  age: 25,
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name)
+  },
+}
+user1.greet("Hi there - I am")
+
+//=========== Combine interfaces (extends name)
+
+interface Named {
+  readonly name: string
+}
+
+interface Greetable extends Named {
+  greet(phrase: string): void
+}
+
+class Person2 implements Greetable {
+  //intentional error
+  //name: number;
+  name = "da"
+  age = 30
+
+  constructor(n: string) {
+    this.name = n
+  }
+
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name)
+  }
+
+  showName() {
+    return this.name
+  }
+}
+
+let person6 = new Person2("Daniel")
+console.log(person6.showName())
+
+//============== Interface as function type
+interface AddFn {
+  (a: number, b: number): number
+}
+
+let add7: AddFn
+
+add7 = (n1: number, n2: number) => {
+  return n1 + n2
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
