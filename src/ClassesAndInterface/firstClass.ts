@@ -156,4 +156,37 @@ add7 = (n1: number, n2: number) => {
   return n1 + n2
 }
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//==================================================
+
+//+++++++++++++ Intersectionn Types +++++++++++++++++
+
+type Admin = {
+  name: string
+  privileges: string[]
+}
+
+type Studant = "snai"
+
+type Employee = {
+  name: string
+  startDate: Date
+}
+
+//interface ElevatedEmployee extends Employee, Admin{}
+
+type ElevatedEmployee = Admin & Employee
+
+const e1: ElevatedEmployee = {
+  name: "Daniel",
+  privileges: ["dd", "ddd"],
+  startDate: new Date(),
+}
+
+type Combinable1 = string | number
+type Numeric = number | boolean
+
+type Universal = Combinable1 | Numeric
+
+const e2: Universal = "I'm Boolean but String"
+
+//+++++++++++++++++++++++++++++++++++++++++++++
