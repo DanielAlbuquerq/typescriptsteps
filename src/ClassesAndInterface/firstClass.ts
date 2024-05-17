@@ -189,4 +189,25 @@ type Universal = Combinable1 | Numeric
 
 const e2: Universal = "I'm Boolean but String"
 
-//+++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++ More on Type Guards ++++++++++++++++++++++++++++++++
+
+function add1(a: Combinable1, b: Combinable1) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString()
+  }
+  return a + b
+}
+type UnknownEmployee = Employee | Admin
+
+function printEmployeeInformation(emp: UnknownEmployee) {
+  console.log("Name:" + emp.name)
+
+  //We can use 'in' and 'instanceof
+  if ("privileges" in emp) {
+    console.log("Privileges: " + emp.privileges)
+  }
+  if ("startDate" in emp) {
+    console.log("Start Date: " + emp.startDate)
+  }
+}
+printEmployeeInformation(e1)
