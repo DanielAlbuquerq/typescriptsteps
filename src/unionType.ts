@@ -28,5 +28,3 @@ console.log(combinedAges)
 
 const combinedNames = combine1("Daniel", "Mendes")
 console.log(combinedNames)
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++
