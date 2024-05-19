@@ -284,5 +284,5 @@ const fetchedUserData = {
 }
 //
 console.log(fetchedUserData.job.title)
-//We can use question mark to check if the property exist in the object.
+//We can use question mark to check if the property exists in the object.
 console.log(fetchedUserData?.job?.title)
