@@ -245,3 +245,14 @@ function moveAnimal(animal: Animal) {
 }
 
 moveAnimal({ type: "bird", flyingSpeed: 100 })
+
+// +++++++++ Index Properties +++++++++++++++++++++++++++++++
+
+//this is how to control which type of properties
+interface ErrorContainer {
+  //{ email: 'Not a valid email', username: 'Must start with charcter!'}
+  [prop: string]: string
+}
+const errorBag: ErrorContainer = {
+  email: "Not a valid email",
+}
