@@ -7,7 +7,7 @@ function add10(n1: number, n2: number) {
 console.log(add10(1, 1)) //This function is returning as number
 
 //This function return as string
-function add1(n1: number, n2: number) {
+function add1(n1: string, n2: number) {
   return n1.toString() + n2.toString()
 }
 console.log(add1(1, 1))
