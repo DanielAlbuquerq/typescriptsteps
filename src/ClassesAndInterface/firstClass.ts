@@ -275,3 +275,14 @@ function add8(a: Combinable2, b: Combinable2) {
 }
 
 const result = add8("Max", "Schwarz")
+
+//================= Optional Chaining ====================
+const fetchedUserData = {
+  id: "u1",
+  name: "Max",
+  job: { title: "CEO", description: "My own company" },
+}
+//
+console.log(fetchedUserData.job.title)
+//We can use question mark to check if the property exist in the object.
+console.log(fetchedUserData?.job?.title)
