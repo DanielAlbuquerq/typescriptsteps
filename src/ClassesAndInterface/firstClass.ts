@@ -256,3 +256,22 @@ interface ErrorContainer {
 const errorBag: ErrorContainer = {
   email: "Not a valid email",
 }
+
+//========= Function Overloads ========================
+
+type Combinable2 = string | number
+//if we're calling this function with two numbers, we get back a number;
+function add8(a: number, b: number): number
+//if we're calling this function with two string, we get back a string;
+function add8(a: string, b: string): number
+//we can make different combinations, and type what to return in which case;
+function add8(a: number, b: string): number
+//
+function add8(a: Combinable2, b: Combinable2) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString()
+  }
+  return a + b
+}
+
+const result = add8("Max", "Schwarz")
