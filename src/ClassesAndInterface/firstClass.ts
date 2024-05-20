@@ -286,3 +286,14 @@ const fetchedUserData = {
 console.log(fetchedUserData.job.title)
 //We can use question mark to check if the property exists in the object.
 console.log(fetchedUserData?.job?.title)
+
+//================= Working with constraints==================
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB)
+}
+
+const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 })
+console.log(mergedObj)
+
+//============================================================
