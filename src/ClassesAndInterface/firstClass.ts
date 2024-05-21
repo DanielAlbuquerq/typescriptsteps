@@ -287,7 +287,7 @@ console.log(fetchedUserData.job.title)
 //We can use question mark to check if the property exists in the object.
 console.log(fetchedUserData?.job?.title)
 
-//================= Working with constraints==================
+//================= Working with constraints ==================
 
 function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign(objA, objB)
@@ -297,3 +297,52 @@ const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 })
 console.log(mergedObj)
 
 //============================================================
+
+//+++++++++++ Generic Classes ++++++++++++++++++++++++++++++++
+
+class Storage {
+  private data = []
+
+  addItem(item) {
+    this.data.push(item)
+  }
+
+  removeItem(item) {
+    this.data.splice(this.data.indexOf(item), 1)
+  }
+  getItems() {}
+}
+//============================================================
+
+//++++++++++ Useful Decorator ++++++++++++++++++
+//Basic of decorator
+
+function Logger(logString: string) {
+  return function (constructor: Function) {
+    console.log(logString)
+    console.log(constructor)
+  }
+}
+
+function WithTemplate(template: string, hookId: string) {
+  return function (_: Function) {
+    const hookEl = document.getElementById(hookId)
+    if (hookEl) {
+      hookEl.innerHTML = template
+    }
+  }
+}
+
+//@Logger('LOGGING - PERSON')
+@WithTemplate("<h1>My Person Object</h1>", "app")
+class Person {
+  name = "Max"
+
+  constructor() {
+    console.log("Creating object")
+  }
+}
+
+const pers = new Person()
+console.log(pers)
+//================================================
