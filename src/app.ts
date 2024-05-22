@@ -1,28 +1,21 @@
-const Person = {
-  name: "Maximilian",
-  age: 30,
+class ProjectInput {
+  templateElement: HTMLTemplateElement
+  hostElement: HTMLDivElement
+  element: HTMLFormElement
+
+  constructor() {
+    this.templateElement = document.getElementById(
+      "project-input"
+    )! as HTMLTemplateElement
+    this.hostElement = document.getElementById("app")! as HTMLDivElement
+
+    const importedNode = document.importNode(this.templateElement.content, true)
+    this.element = importedNode.firstElementChild as HTMLFormElement
+    this.attach()
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement("afterbegin", this.element)
+  }
 }
-// function add(n1: number, n2: number) {
-//   return n1 + n2
-// }
-
-// function printResult(num: number) {
-//   console.log("Result: " + num)
-// }
-
-// printResult(add(2, 1))
-
-// let combineValues: (a: number, b: number) => number
-
-// combineValues = add
-// combineValues = printResult
-
-// // combineValues = 5;
-// console.log(combineValues(4, 8))
-
-function generateError(message: string, code: number) {
-  throw { message: message, errorCode: code }
-}
-generateError("e", 500)
-
-console.log("daniel")
+const prjInput = new ProjectInput()
